@@ -1,0 +1,76 @@
+html {
+    font-size: 16px; /* establece el tamaño base de fuente para todo el documento */
+
+    box-sizing: border-box; /* asegura que el ancho y alto incluya padding y border */
+}
+  
+body {
+    margin: 0; /* elimina el margen predeterminado en el cuerpo del documento */
+
+    font-family: Arial, sans-serif; /* establece la fuente predeterminada para el texto del cuerpo */
+    font-size: 1rem; /* utiliza el tamaño base de fuente definido en el elemento html */
+    line-height: 1.5; /* establece la altura de línea predeterminada para mejorar la legibilidad */
+    color: #333; /* establece el color de texto predeterminado */
+
+    background: url(/imgs/background.jpg) no-repeat;
+    background-size: cover;
+}
+
+.display-weather {
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.forecast {
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-around;
+    /* background-color: white; */
+
+    width: 800px;
+    height: 400px;
+}
+
+.day-container {
+    position: relative;
+    /* display:flow-root; */
+    display: grid;
+    justify-content: center;
+
+    width: 150px;
+    padding: 10px;
+    margin: 0 5px;
+
+    color: white;
+
+    transition: 100ms;
+
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .15);
+    background: inherit;
+    overflow: hidden;
+}
+.day-container::before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(5px);
+    margin: -20px;
+}
+
+.day-container:hover {
+    transform: scale(105%);
+}
+
+.day {
+    /* text-align: center; */
+}
